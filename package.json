@@ -1,6 +1,6 @@
 {
   "name": "node-chat",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "index.js",
   "license": "MIT",
   "author": {
@@ -9,27 +9,71 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lPaths/node-chat"
+    "url": "git@github.com:6thpath/node-chat.git"
   },
   "bugs": {
-    "url": "https://github.com/lPaths/node-chat/issues"
+    "url": "https://github.com/6thpath/node-chat/issues"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "scripts": {
-    "dev": "nodemon",
+    "dev": "PORT=4000 nodemon",
     "start": "node index.js"
   },
   "dependencies": {
-    "chalk": "4.1.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "nodemon": "2.0.4",
-    "prettier": "2.0.5"
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "nodemon": "2.0.14",
+    "prettier": "2.4.1",
+    "prettier-eslint": "13.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "commonjs": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "printWidth": 100,
+          "tabWidth": 2,
+          "useTabs": false,
+          "semi": false,
+          "singleQuote": true,
+          "quoteProps": "as-needed",
+          "jsxSingleQuote": false,
+          "trailingComma": "es5",
+          "bracketSpacing": true,
+          "jsxBracketSameLine": false,
+          "arrowParens": "always",
+          "rangeStart": 0,
+          "requirePragma": false,
+          "proseWrap": "preserve",
+          "htmlWhitespaceSensitivity": "css",
+          "vueIndentScriptAndStyle": false,
+          "endOfLine": "lf"
+        }
+      ],
+      "no-global-assign": "off"
+    }
   }
 }

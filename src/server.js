@@ -3,27 +3,22 @@ import express from 'express'
 import cors from 'cors'
 import { createServer } from 'http'
 
-import { info } from './utils/chalk'
-import { createSocketIO } from './utils/socketIO'
+import { createSocketIO } from './socketIO'
 
-async function main() {
-  // Initializes application
-  const app = express()
+// Initializes application
+const app = express()
 
-  // Enable cors
-  app.use(cors())
+// Enable cors
+app.use(cors())
 
-  // Create http server
-  const httpServer = createServer(app)
+// Create http server
+const httpServer = createServer(app)
 
-  // Initialize socketIO
-  createSocketIO(httpServer)
+// Initialize socketIO
+createSocketIO(httpServer)
 
-  // Listen to HTTP and WebSocket server
-  const PORT = process.env.PORT || process.env.API_PORT
-  httpServer.listen({ port: PORT }, () => {
-    info(`Server ready at port ${PORT}`)
-  })
-}
-
-main()
+// Listen to HTTP and WebSocket server
+const PORT = process.env.PORT || process.env.API_PORT
+httpServer.listen({ port: PORT }, () => {
+  console.log(`Server ready at port ${PORT}`)
+})

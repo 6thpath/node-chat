@@ -5,10 +5,8 @@ A simple chat backend with implementation of [Express](https://expressjs.com/) +
 ## Project setup
 
 ```bash
-yarn
+yarn install
 ```
-
-Create `.env` file at root project folder follow `.env.template`
 
 ## Start
 
